@@ -1,8 +1,0 @@
-# GitHub Actions Example
-
-This is a simple example of how to use GitHub Actions to automate your workflow.
-The repository also contains a Dockerfile and docker-compose.yml to make sure locally this analysis remains reproducible.
-
-## Workflow
-
-The workflow is defined in the `.github/workflows` directory. The workflow is triggered on every push to the repository. The workflow consists of two jobs: `test` and `build`. The `test` job runs the tests in the `tests` directory. The `build` job builds the Docker image and pushes it to the GitHub Container Registry.
