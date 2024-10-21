@@ -20,10 +20,6 @@ jobs:
         # Start the container in detached mode
         docker compose up -d
 
-    - name: Install R dependencies (renv restore)
-      run: |
-        docker exec rstudio_container Rscript -e "renv::restore()"
-
     - name: Run analysis script
       run: |
         docker exec rstudio_container Rscript scripts/analysis.R

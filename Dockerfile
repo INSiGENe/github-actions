@@ -38,19 +38,17 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
-# Install renv
-RUN R -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 
 # Set working directory
 WORKDIR /home/rstudio
 
-# Create renv directory with correct permissions
-RUN mkdir -p /home/rstudio/renv && \
-    chown -R rstudio:rstudio /home/rstudio/renv
+# Make sure the renv.lock is in the container
+COPY renv.lock /home/rstudio
 
-# Create .Rprofile to set up renv
-RUN echo 'source("renv/activate.R")' > .Rprofile && \
-    chown rstudio:rstudio .Rprofile
+# Install renv and restore the environment
+RUN R -e "install.packages('renv')" && \
+    R -e "renv::restore()"
+
 
 # Expose port 8787 for RStudio Server
 EXPOSE 8787
