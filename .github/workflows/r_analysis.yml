@@ -18,7 +18,7 @@ jobs:
     - name: Start Docker container
       run: |
         # Start the Docker container in detached mode
-        docker run -d --name rstudio_container rstudio_image
+        docker run -d --name rstudio_container -v $(pwd)/scripts:/home/rstudio/scripts -v $(pwd)/results:/home/rstudio/results rstudio_image
 
     - name: Run analysis script
       run: |
