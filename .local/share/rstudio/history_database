@@ -1,0 +1,7 @@
+1729470275126:renv::status
+1729470281909:renv::status()
+1729470294589:renv::snapshot()
+1729470440171:renv::activate()
+1729470448562:renv::status()
+1729470457589:renv::install("ggplot2")
+1729470481019:renv::snapshot()

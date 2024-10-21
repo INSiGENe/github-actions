@@ -1,0 +1,26 @@
+{
+    "id": "EBEC4916",
+    "path": "~/Library/CloudStorage/OneDrive-INSiGENePtyLtd/Seb/Business/Blog/github-actions/Dockerfile",
+    "project_path": "Dockerfile",
+    "type": "dockerfile",
+    "hash": "1930562263",
+    "contents": "",
+    "dirty": false,
+    "created": 1729469967740.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "41,84",
+        "scrollLine": "28"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1729470021,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1729470021223,
+    "read_only": false,
+    "read_only_alternatives": []
+}
