@@ -43,7 +43,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /home/rstudio
 
 # Make sure the renv.lock is in the container
-COPY renv.lock /home/rstudio
+COPY renv.lock /home/rstudio/renv.lock
 
 # Install renv and restore the environment
 RUN R -e "install.packages('renv')" && \

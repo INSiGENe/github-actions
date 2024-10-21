@@ -10,24 +10,26 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up Docker
+    - name: Build Docker image
       run: |
-        # Build the Docker image based on Dockerfile and docker-compose.yml
-        docker compose build
+        # Build the Docker image using the Dockerfile
+        docker build -t rstudio_image .
 
     - name: Start Docker container
       run: |
-        # Start the container in detached mode
-        docker compose up -d
+        # Start the Docker container in detached mode
+        docker run -d --name rstudio_container rstudio_image
 
     - name: Run analysis script
       run: |
+        # Execute the R script inside the container
         docker exec rstudio_container Rscript scripts/analysis.R
 
     - name: Stop Docker container
       run: |
-        # Stop the container after running the analysis
-        docker compose down
+        # Stop and remove the container
+        docker stop rstudio_container
+        docker rm rstudio_container
 
     - name: Upload results
       uses: actions/upload-artifact@v4

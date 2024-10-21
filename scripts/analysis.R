@@ -1,5 +1,4 @@
 # Load required libraries
-#renv::restore()
 
 library(ggplot2)
 library(readr)
